@@ -21,8 +21,48 @@ $(document).ajaxStop(function() {
   NProgress.done();
 });
 
+//-------------------登录拦截功能
+//判断是否是登录页面, 登录页面不需要拦截 
+if(location.href.indexOf("login") === -1) { //不是登录页
+  //进入页面立即发送请求验证是否登录
+  $.ajax({
+    type: "get",
+    url: "/employee/checkRootLogin",
+    dataType: "json",
+    success: function(info) {
+      if(info.success) {
+        //登录成功, 什么都不用做
+      }
+      if(info.error === 400) {
+        //没有登录, 拦截到登录页面
+        location.href = "login.html";
+      }
+    }
+  });
 
-//---------------分类导航弹出与隐藏功能
-$(".aside-nav .nav-cate").on("click", function() {
-  $(".aside-inner-nav").stop().slideToggle();
+}
+
+
+$(function() {
+  //---------------分类导航弹出与隐藏功能
+  $(".aside-nav .nav-cate").on("click", function () {
+    $(".aside-inner-nav").stop().slideToggle();
+  });
+
+  //---------------退出功能
+  //点击模态框退出按钮发送ajax进行退出
+  $("#logoutModal .btn-logout").on("click", function () {
+    $.ajax({
+      type: "get",
+      url: "/employee/employeeLogout",
+      dataType: "json",
+      success: function (info) {
+        //判断退出是否成功
+        if (info.success) {
+          //退出成功, 跳转登录页
+          location.href = "login.html";
+        }
+      }
+    });
+  });
 });
