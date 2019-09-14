@@ -5,7 +5,21 @@
 .mt-150 {
   margin-top: 150px;
 }
-
+.ml-3 {
+  margin-left: 3px;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 /*--------------------------------样式---------------------------*/
 /*登录页*/
 .login-bgc {
@@ -18,5 +32,102 @@
     line-height: 40px;
     font-size: 20px;
     text-align: center;
+  }
+}
+
+
+/*公用侧边栏样式*/
+.lt-aside {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 180px;
+  background-color: #222D32;
+  .aside-title {
+    h3 {
+      height: 50px;
+      line-height: 50px;
+      background-color: #367FA9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      a {
+        color: #fff;
+      }
+    }
+  }
+  .aside-user {
+    padding-top: 30px;
+    height: 180px;
+    img {
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+    p {
+      font-size: 18px;
+      color: #fff;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+  .aside-nav {
+    ul{
+      li {
+        a {
+          display: block;
+          line-height: 40px;
+          height: 40px;
+          color: #fff;
+          font-size: 14px;
+          padding-left: 40px;
+          border-left: 3px solid transparent;
+          span {
+            margin-left: 3px;
+          }
+        }
+        &.current {
+          background-color: #1D1F21;
+          border-left: 3px solid #006699;
+        }
+        .aside-inner-nav {
+          a {
+            padding-left: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*公用主体部分*/
+.lt-main {
+  padding-top: 50px;
+  padding-left: 180px;
+  height: 1000px;
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #5D9ED1;
+    padding-left: 180px;
+    a {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+  .main-content {
+    margin-top: 20px;
   }
 }

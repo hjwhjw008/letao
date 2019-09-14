@@ -20,3 +20,9 @@ $(document).ajaxStop(function() {
   //结束进度条
   NProgress.done();
 });
+
+
+//---------------分类导航弹出与隐藏功能
+$(".aside-nav .nav-cate").on("click", function() {
+  $(".aside-inner-nav").stop().slideToggle();
+});
