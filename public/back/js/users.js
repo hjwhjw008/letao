@@ -18,7 +18,7 @@ function rander(page, size) {
     success: function(info) {
       //模板动态渲染
       var htmlStr = template("tpl",info);
-      $(".users-table tbody").html(htmlStr);
+      $(".my-table tbody").html(htmlStr);
       //分页模块渲染
       $(".pagenator").bootstrapPaginator({
         bootstrapMajorVersion: 3, //默认是2，如果是bootstrap3版本，这个参数必填

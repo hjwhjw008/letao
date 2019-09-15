@@ -135,13 +135,13 @@ ul {
   width: 48%;
   height: 400px;
 }
-.lt-main .main-content .users-table {
+.lt-main .main-content .my-table {
   text-align: center;
 }
-.lt-main .main-content .users-table th {
+.lt-main .main-content .my-table th {
   text-align: center;
 }
-.lt-main .main-content .users-table thead th,
-.lt-main .main-content .users-table tbody td {
+.lt-main .main-content .my-table thead th,
+.lt-main .main-content .my-table tbody td {
   vertical-align: middle;
 }

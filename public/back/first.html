@@ -70,7 +70,7 @@
         </ol>
         <!--表格模块-->
         <div style="height: 300px;">
-          <table class="table table-bordered table-hover users-table">
+          <table class="table table-bordered table-hover my-table">
             <thead>
               <tr>
                 <th width="20%">序号</th>
@@ -78,12 +78,24 @@
               </tr>
             </thead>
             <tbody>
-        
+              
             </tbody>
           </table>
         </div>
       </div>
     </div>
+
+    <!--动态渲染模板-->
+    <script type="text/html" id="tpl">
+      {{ each rows v i }}
+      <tr>
+        <td>{{ i + 1 + (page - 1) * size }}</td>
+        <td>{{ v.categoryName }}</td>
+      </tr>
+      {{ /each }}
+    </script>
+
+
     <script src="./lib//jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
