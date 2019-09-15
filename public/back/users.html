@@ -67,20 +67,27 @@
           <li><a href="index.html"">管理系统</a></li>
           <li class=" active">用户管理</li>
         </ol>
-        <table class="table table-bordered users-table">
-          <thead>
-            <tr>
-              <th width="10%">序号</th>
-              <th width="20%">用户名</th>
-              <th width="30%">手机号</th>
-              <th width="20%">状态</th>
-              <th width="20%">操作</th>
-            </tr>
-          </thead>
-          <tbody>
-
-          </tbody>
-        </table>
+        <!--表格模块-->
+        <div style="height: 300px;">
+          <table class="table table-bordered users-table">
+            <thead>
+              <tr>
+                <th width="10%">序号</th>
+                <th width="20%">用户名</th>
+                <th width="30%">手机号</th>
+                <th width="20%">状态</th>
+                <th width="20%">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+          
+            </tbody>
+          </table>
+        </div>
+        <!--分页模块-->
+        <div class="text-right">
+          <ul class="pagenator"></ul>
+        </div>
       </div>
     </div>
 
@@ -112,6 +119,7 @@
     <script src="./lib//jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
