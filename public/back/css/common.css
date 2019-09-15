@@ -99,7 +99,6 @@ ul {
   padding-top: 50px;
   padding-left: 180px;
   height: 1000px;
-  background-color: pink;
   transition: padding 1s;
 }
 .lt-main.hide-menu {
@@ -128,4 +127,10 @@ ul {
 }
 .lt-main .main-content {
   margin-top: 20px;
+  /*首页echarts图表*/
+}
+.lt-main .main-content .echarts-1,
+.lt-main .main-content .echarts-2 {
+  width: 48%;
+  height: 400px;
 }
