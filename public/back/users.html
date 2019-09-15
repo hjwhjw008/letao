@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <!--模态框-->
+    <!--退出模态框-->
     <div class="modal fade modal-box bs-example-modal-sm" tabindex="-1" role="dialog" id="logoutModal">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -32,6 +32,27 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    <!--启用禁用状态模态框-->
+    <div class="modal fade modal-box bs-example-modal-sm" tabindex="-1" role="dialog" id="isDeleteModal">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">温馨提示</h4>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary btn-sure">确认</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <!--侧边栏模块-->
     <div class="lt-aside">
       <div class="aside-title">
@@ -101,7 +122,7 @@
         <td>
           {{ v.isDelete === 1 ? "正常" : "禁用" }}
         </td>
-        <td>
+        <td data-id="{{ v.id }}">
           {{ if v.isDelete === 1}}
           <button class="btn btn-danger">禁用</button>
           {{ /if }}
