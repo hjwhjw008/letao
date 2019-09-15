@@ -65,4 +65,19 @@ $(function() {
       }
     });
   });
+  
+  //--------------隐藏显示侧边栏
+  /**
+   * 点击菜单按钮, 切换类名通过过渡动画隐藏显示侧边栏
+   * 在css中定义好两个状态
+   */
+  //注册点击事件
+  $(".topbar .topbar-menu").on("click",function() {
+    //切换侧边栏类名
+    $(".lt-aside").toggleClass("hide-menu");
+    //切换topbar类名
+    $(".topbar").toggleClass("hide-menu");
+    //切换main模块类名
+    $(".lt-main").toggleClass("hide-menu");
+  });
 });

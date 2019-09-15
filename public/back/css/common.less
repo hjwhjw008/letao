@@ -45,6 +45,10 @@ ul {
   height: 100%;
   width: 180px;
   background-color: #222D32;
+  transition: left 1s;
+  &.hide-menu {
+    left: -180px;
+  }
   .aside-title {
     h3 {
       height: 50px;
@@ -110,6 +114,11 @@ ul {
   padding-top: 50px;
   padding-left: 180px;
   height: 1000px;
+  background-color: pink;
+  transition: padding 1s;
+  &.hide-menu {
+    padding-left: 0;
+  }
   .topbar {
     position: fixed;
     top: 0;
@@ -118,6 +127,10 @@ ul {
     height: 50px;
     background-color: #5D9ED1;
     padding-left: 180px;
+    transition: padding 1s;
+    &.hide-menu {
+      padding-left: 0;
+    }
     a {
       width: 50px;
       height: 50px;

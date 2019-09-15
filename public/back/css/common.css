@@ -41,6 +41,10 @@ ul {
   height: 100%;
   width: 180px;
   background-color: #222D32;
+  transition: left 1s;
+}
+.lt-aside.hide-menu {
+  left: -180px;
 }
 .lt-aside .aside-title h3 {
   height: 50px;
@@ -95,6 +99,11 @@ ul {
   padding-top: 50px;
   padding-left: 180px;
   height: 1000px;
+  background-color: pink;
+  transition: padding 1s;
+}
+.lt-main.hide-menu {
+  padding-left: 0;
 }
 .lt-main .topbar {
   position: fixed;
@@ -104,6 +113,10 @@ ul {
   height: 50px;
   background-color: #5D9ED1;
   padding-left: 180px;
+  transition: padding 1s;
+}
+.lt-main .topbar.hide-menu {
+  padding-left: 0;
 }
 .lt-main .topbar a {
   width: 50px;
