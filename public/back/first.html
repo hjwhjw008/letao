@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <!--模态框-->
+    <!--退出功能的模态框-->
     <div class="modal fade modal-box bs-example-modal-sm" tabindex="-1" role="dialog" id="logoutModal">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -29,6 +29,29 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             <button type="button" class="btn btn-primary btn-logout">退出</button>
           </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--添加功能的模态框-->
+    <div class="modal fade modal-box bs-example-modal-sm" tabindex="-1" role="dialog" id="addModal">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <form id="cateForm">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="submit" class="btn btn-primary btn-add">添加</button>
+            </div>
+          </form>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -68,6 +91,10 @@
           <li class=" active">分类管理</li>
           <li class=" active">一级分类</li>
         </ol>
+        <!--添加按钮-->
+        <div class="add-box">
+          <button class="btn btn-default mb-20" id="addBtn">添加分类</button>
+        </div>
         <!--表格模块-->
         <div style="height: 300px;">
           <table class="table table-bordered table-hover my-table">
@@ -81,6 +108,10 @@
               
             </tbody>
           </table>
+        </div>
+        <!--分页结构-->
+        <div class="text-right">
+          <ul class="pagenator"></ul>
         </div>
       </div>
     </div>
