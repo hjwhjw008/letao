@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------------------------
                           公用js
 -----------------------------------------------------------------------------*/
-
+var flag = true; //控制setTableBox值调用一次的阀门
 //--------------进度条功能
 /**
  * 利用jquery的全局ajax事件
@@ -19,6 +19,10 @@ $(document).ajaxStart(function() {
 $(document).ajaxStop(function() {
   //结束进度条
   NProgress.done();
+  //在ajax请求完成后设置tableBox的高
+  if(flag) {
+    setTableBox();
+  }
 });
 
 //-------------------登录拦截功能
@@ -42,7 +46,16 @@ if(location.href.indexOf("login") === -1) { //不是登录页
 
 }
 
+//---------------动态设置tableBox的高, 撑开分页按钮
 
+function setTableBox() {
+  flag = false;
+  var tableHeight = $("#tableBox .my-table").height();
+  $("#tableBox").height(tableHeight);
+}
+
+
+  //调用函数设置tableBox的高
 $(function() {
   //---------------分类导航弹出与隐藏功能
   $(".aside-nav .nav-cate").on("click", function () {
@@ -80,4 +93,6 @@ $(function() {
     //切换main模块类名
     $(".lt-main").toggleClass("hide-menu");
   });
+
+
 });
