@@ -73,9 +73,16 @@ var pageSize = 5; // 全局变量用于控制每页的条数
     });
     //使用事件委托为下拉菜单注册点击事件,完成选中功能
     $("#addModal .dropdown-menu").on("click", "a", function() {
+      //将选中的文本赋值给按钮
       var text = $(this).text();
       $("#chkText").text(text);
+      //将存储的id赋值给隐藏域
+      var id = $(this).data("id");
+      $("#categoryId").val(id).change();
+      //将表单校验样式设置为成功
+
     });
+
     //初始化文件上传插件,实现图片预览
     $("#fileImg").fileupload({
       //指定返回数据类型
@@ -84,8 +91,81 @@ var pageSize = 5; // 全局变量用于控制每页的条数
       done: function(e,data) {
         //通过data.result.picAddr获取到图片地址, 
         var imgUrl = data.result.picAddr;
+        //将图片地址给img标签实现图片预览
         $("#previewImg").attr("src", imgUrl);
+        //将图片地址赋值给隐藏域
+        $("#brandLogo").val(imgUrl).change();
       }
+    });
+
+    //调用插件方法完成表单校验
+    $("#cateForm").bootstrapValidator({
+        //默认隐藏域不会校验, 需要校验隐藏域必须指定excluded属性,
+        excluded: [':disabled'],
+        //指定校验时的图标显示，默认是bootstrap风格
+        feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        //指定校验字段
+        fields: {
+          //校验categoryId
+          //校验brandName
+          //校验brandLogo
+
+          categoryId: {
+            //指定校验规则
+            trigger: "change",
+            validators: {
+              //非空校验
+              notEmpty: {
+                message: "请选择一级分类"
+              }
+            }
+          },
+          brandName: {
+            validators: {
+              notEmpty: {
+                message: "请输入二级分类名称"
+              }
+            }
+          },
+          brandLogo: {
+            trigger: "change",
+            validators: {
+              notEmpty: {
+                message: "请上传图片"
+              }
+            }
+          }
+        }
+    });
+    //注册表单校验成功事件
+    $("#cateForm").on("success.form.bv",function(e) {
+      //阻止表单默认的提交
+      e.preventDefault();
+      //通过ajax发送请求添加分类数据
+      $.ajax({
+        type: "post",
+        url: "/category/addSecondCategory",
+        data: $("#cateForm").serialize(),
+        dataType: "json",
+        success: function(info) {
+          if(info.success) {//上传成功
+            //关闭模态框
+            $("#addModal").modal("hide");
+            //重新渲染第一页数据
+            rander(1, pageSize);
+            //重置表单数据
+            $("#cateForm").data("bootstrapValidator").resetForm(true);
+            //重置下拉按钮文本
+            $("#chkText").text("请选择一级分类");
+            //重置预览图片地址
+            $("#previewImg").attr("src", "./images/none.png");
+          }
+        }
+      });
     });
   }
 
