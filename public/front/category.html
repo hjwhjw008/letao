@@ -33,42 +33,6 @@
             <div class="mui-scroll">
               <!--这里放置真实显示的DOM内容-->
               <ul>
-                <li class="current">
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
-                <li>
-                  <a href="#">运动馆</a>
-                </li>
               </ul>
             </div>
           </div>
@@ -78,48 +42,7 @@
             <div class="mui-scroll">
               <!--这里放置真实显示的DOM内容-->
               <ul>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand1.png" alt="">
-                    <p>耐克</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand2.png" alt="">
-                    <p>阿迪</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand3.png" alt="">
-                    <p>哥伦比亚</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand4.png" alt="">
-                    <p>新百伦</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand5.png" alt="">
-                    <p>不认识</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand6.png" alt="">
-                    <p>匡威</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./images/brand1.png" alt="">
-                    <p>耐克</p>
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -157,8 +80,36 @@
         </ul>
       </footer>
     </div>
+
+    <script type="text/html" id="leftTpl">
+      {{ each rows v i }}
+      <li class="{{ i === 0 ? 'current' : '' }}">
+        <a href="#" data-id="{{ v.id }}">{{ v.categoryName }}</a>
+      </li>
+      {{ /each }}
+    </script>
+
+    <script type="text/html" id="rightTpl">
+      <!--如果没有数据,提示信息-->
+      {{ if total === 0}}
+        <p style="padding-left: 5px;">没有更多分类信息了</p>
+      {{ /if }}
+      {{ each rows v i }}
+      <li>
+        <a href="#">
+          <img src="{{ v.brandLogo }}" alt="">
+          <p>{{ v.brandName }}</p>
+        </a>
+      </li>
+      {{ /each }}
+    </script>
+
+
+    <script src="./lib/zepto/zepto.min.js"></script>
     <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/category.js"></script>
   </body>
 
 </html>
