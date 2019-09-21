@@ -1,0 +1,49 @@
+/*左侧tab列表*/
+.lt-main-left {
+  position: relative;
+  float: left;
+  width: 90px;
+  height: 100%;
+  li {
+    a {
+      display: block;
+      width: 90px;
+      height: 50px;
+      text-align: center;
+      color: #666;
+      line-height: 50px;
+      background-color: #E3E4E5;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;      
+    }
+  }
+  li.current {
+    a {
+      background-color: #fff;
+      border-right: none;
+    }
+  }
+}
+/*右侧元素*/
+.lt-main-right {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  ul {
+    li {
+      float: left;
+      width: 33.33%;
+      a {
+        display: block;
+        img {
+          width: 70px;
+          height: 50px;
+          margin: 0 auto;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
