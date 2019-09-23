@@ -32,29 +32,12 @@
             <!--主体内容写在这里面-->
             <!--搜索模块-->
             <div class="lt-search">
-              <input type="search" placeholder="请输入关键字">
-              <button class="mui-btn mui-btn-primary">搜索</button>
+              <input type="search" placeholder="请输入关键字" id="search">
+              <button class="mui-btn mui-btn-primary" id="searchBtn">搜索</button>
             </div>
             <!--历史记录模块-->
             <div class="lt-history">
-              <div class="history-title">
-                <span class="mui-pull-left">搜索历史</span>
-                <span class="mui-pull-right"><i class="fa fa-trash"></i>清空记录</span>
-              </div>
-              <ul class="history-content">
-                <li>
-                  <a href="#" class="mui-pull-left">的解决当前价</a>
-                  <i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
-                </li>
-                <li>
-                  <a href="#" class="mui-pull-left">awsq</a>
-                  <i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
-                </li>
-                <li>
-                  <a href="#" class="mui-pull-left">12564</a>
-                  <i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
-                </li>
-              </ul>
+              <!--动态渲染-->
             </div>
           </div>
         </div>
@@ -91,8 +74,32 @@
         </ul>
       </footer>
     </div>
+
+    <script type="text/html" id="historyTpl">
+      <!--如果数组长度为空,不渲染数据-->
+      {{if arr.length === 0}}
+        <p>没有更多数据了</p>
+      {{else}}
+      <div class="history-title">
+        <span class="mui-pull-left">搜索历史</span>
+        <span class="mui-pull-right" id="clearBtn"><i class="fa fa-trash"></i>清空记录</span>
+      </div>
+      <ul class="history-content">
+        {{ each arr v i }}
+        <li>
+          <a href="#" class="mui-pull-left">{{ v }}</a>
+          <i data-index="{{ i }}" class="mui-pull-right mui-icon mui-icon-closeempty btn-del"></i>
+        </li>
+        {{ /each }}
+      </ul>
+      {{ /if }}
+    </script>
+
+    <script src="./lib/zepto/zepto.min.js"></script>
     <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/search.js"></script>
   </body>
 
 </html>
