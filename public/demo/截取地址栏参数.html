@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //获取地址栏参数
+    var search = location.search;
+    //将编码转为中文
+    search = decodeURI(search);
+    //去掉问号
+    search = search.slice(1);
+    //去掉&
+    var arr = search.split("&");
+    //对象存储键值对
+    var obj = {};
+    //遍历数组,去掉=, 存储为键值对
+    arr.forEach(function(v,i) {
+      var key = v.split("=")[0];
+      var value = v.split("=")[1];
+      obj[key] = value;
+    });
+    console.log(obj);
+
+  </script>
+</body>
+</html>
