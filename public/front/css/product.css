@@ -1,0 +1,41 @@
+/*公共的内边距与边框样式*/
+.details-box {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+/*价格模块样式*/
+.price-box .price {
+  color: red;
+}
+.price-box .oldprice {
+  text-decoration: line-through;
+  font-size: 12px;
+}
+/*尺码模块*/
+.size span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  text-align: center;
+  line-height: 25px;
+  margin: 3px 0;
+}
+/*库存模块*/
+.num .surplus {
+  font-size: 12px;
+  color: #666;
+}
+/*私有的底部模块*/
+.lt-product-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  background-color: #EFEFF4;
+  padding: 10px;
+  border-top: 1px solid red;
+  line-height: 35px;
+}

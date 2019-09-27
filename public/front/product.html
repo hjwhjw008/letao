@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的乐淘</title>
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./css/conmmon.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="icon" href="./favicon.ico">
+  </head>
+
+  <body>
+    <!--全屏容器-->
+    <div class="lt-container">
+      <!--头部模块-->
+      <header class="lt-header">
+        <a href="javascript: history.back();" class="back-index"><i class="mui-icon mui-icon-back"></i></a>
+        <div class="header-center">
+          <h3>商品详情</h3>
+        </div>
+        <a href="javascript: location.reload();" class="serach"><i class="mui-icon mui-icon-reload"></i></a>
+      </header>
+
+
+      <!--内容模块-->
+      <div class="lt-main">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!--轮播图-->
+            <div class="mui-slider">
+              <div class="mui-slider-group mui-slider-loop">
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner6.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner5.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner6.png" /></a></div>
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner1.png" /></a></div>
+              </div>
+              <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+              </div>
+            </div>
+            <!--标题-->
+            <div class="product-title details-box">
+              <strong>阿迪猪</strong>
+            </div>
+            <!--价格-->
+            <div class="price-box details-box">
+              <span>价格:</span>
+              <span class="price">¥132</span>
+              <span class="oldprice">¥11393</span>
+            </div>
+            <!--尺码-->
+            <div class="size details-box">
+              尺码:
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+              <span>40</span>
+            </div>
+            <!--库存-->
+            <div class="num details-box">
+              <span>数量</span>
+              <div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100'>
+                <!-- "-"按钮，点击可减小当前数值 -->
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input" type="number" />
+                <!-- "+"按钮，点击可增大当前数值 -->
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+              </div>
+              <span class="surplus">剩余数量: 777双</span>
+            </div>
+            <!--详情模块-->
+            <div class="desc details-box">
+              详情: 安抚环卫夫人猪挥洒的发送卡尼萨德里克功能的即可great昂库你发了功能打开了方便呢的司空见惯那是寄给你十几个华为台湾回头微博购物欧泊㽣nsfdm
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--底部模块不共用,单独写-->
+      <footer class="lt-product-footer">
+        <a href="cart.html" class="go-Cart mui-pull-left">前往购物车</a>
+        <div class="btn-box mui-pull-right">
+          <button class="mui-btn mui-btn-danger">加入购物车</button>
+          <button class="mui-btn mui-btn-waring">买买买</button>
+        </div>
+      </footer>
+    </div>
+
+
+
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/product.js"></script>
+  </body>
+
+</html>
