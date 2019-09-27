@@ -31,3 +31,26 @@
   //轮播图功能
   carousel();
 })();
+
+
+//公用方法获取地址栏参数的方法
+//k: 要获取的参数键名
+function getSearch(k) {
+  //获取地址栏参数
+  var search = location.search;
+  //将编码转为中文
+  search = decodeURI(search);
+  //去掉问号
+  search = search.slice(1);
+  //去掉&
+  var arr = search.split("&");
+  //对象存储键值对
+  var obj = {};
+  //遍历数组,去掉=, 存储为键值对
+  arr.forEach(function (v, i) {
+    var key = v.split("=")[0];
+    var value = v.split("=")[1];
+    obj[key] = value;
+  });
+  return obj[k];
+}

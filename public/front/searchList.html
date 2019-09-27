@@ -83,9 +83,6 @@
     </div>
 
     <script type="text/html" id="productTpl">
-      {{ if data.length === 0 }}
-       <p>没有更多数据了</p>
-      {{ else }}
       {{ each data v i }}
       <li class="lt-product-item">
         <a href="#">
@@ -96,7 +93,6 @@
         </a>
       </li>
       {{ /each }}
-      {{ /if }}
     </script>
 
 
