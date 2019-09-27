@@ -85,7 +85,7 @@
     <script type="text/html" id="productTpl">
       {{ each data v i }}
       <li class="lt-product-item">
-        <a href="#">
+        <a href="product.html?productId={{ v.id }}">
           <img src="{{ v.pic[0].picAddr }}" alt="">
           <p class="mui-ellipsis-2">{{ v.proName }}</p>
           <p><span class="price">{{ v.price }}</span> <span class="old-price">{{ v.oldPrice }}</span></p>

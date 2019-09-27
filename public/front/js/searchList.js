@@ -40,6 +40,7 @@ function rander(callback) {
       data: param,
       dataType: "json",
       success: function (info) {
+        console.log(info);
         //调用回调函数
         callback && callback(info);
       }
