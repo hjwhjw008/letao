@@ -15,7 +15,6 @@ $(function() {
       },
       dataType: "json",
       success: function(info) {
-        console.log(info);
         var htmlStr = template("tpl", info);
         $(".lt-main .mui-scroll").html(htmlStr);
         //因为轮播图时动态生成的,所以需要手动初始化
@@ -23,6 +22,8 @@ $(function() {
         gallery.slider({
           interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
         });
+        //因为数量框也是动态生成的所以需要手动初始化
+        mui(".mui-numbox").numbox();
       }
     });
   }
@@ -31,5 +32,44 @@ $(function() {
 /*-------------------------------------------------------------------------------------------------------------
                                       方法调用
   ----------------------------------------------------------------------------------------------------------- */
+  //进入页面渲染数据
   rander();
+
+  //尺码选择功能
+  $(".lt-main").on("click", ".size span",function() {
+    $(this).addClass("current").siblings().removeClass("current");
+  });
+  //前往购物车
+
+  //添加到购物车
+  $("#addCart").on("click",function() {
+    //收集参数
+    var productId = getSearch("productId");
+    var num = $(".mui-numbox-input").val()
+    var size = $(".size span.current").text();
+    //验证参数
+    if(!size) {
+      mui.toast("请选择尺码");
+      return;
+    }
+    //发送请求添加购物车
+    $.ajax({
+      type: "post",
+      url: "/cart/addCart",
+      data: {
+        productId: productId,
+        num: num,
+        size: size
+      },
+      dataType: "json",
+      success: function(info) {
+        console.log(info);
+        //如果未登录
+        if(info.error === 400) {
+          //跳转到登录页并将当前页地址作为参数传递过去
+          location.href = "login.html?retUrl=" + location.href;
+        }
+      }
+    });
+  });
 });
