@@ -69,6 +69,14 @@ $(function() {
           //跳转到登录页并将当前页地址作为参数传递过去
           location.href = "login.html?retUrl=" + location.href;
         }
+        //如果已登录,说明添加已成功, 弹出模态框
+        if(info.success) {
+          mui.confirm("添加成功","温馨提示",["去购物车","继续浏览"],function(e) {
+            if(e.index === 0) {
+              location.href = "cart.html";
+            }
+          });
+        }
       }
     });
   });

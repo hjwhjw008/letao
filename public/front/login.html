@@ -20,7 +20,7 @@
       <header class="lt-header">
         <a href="javascript: history.back();" class="back-index"><i class="mui-icon mui-icon-back"></i></a>
         <div class="header-center">
-          <h3>商品列表</h3>
+          <h3>登录</h3>
         </div>
       </header>
 
@@ -29,7 +29,20 @@
       <div class="lt-main">
         <div class="mui-scroll-wrapper">
           <div class="mui-scroll">
-            
+            <form class="mui-input-group">
+              <div class="mui-input-row">
+                <label>用户名</label>
+                <input type="text" id="username" class="mui-input-clear" placeholder="请输入用户名">
+              </div>
+              <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" id="password" class="mui-input-password" placeholder="请输入密码">
+              </div>
+              <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary" id="loginBtn">登录</button>
+                <button type="reset" class="mui-btn mui-btn-danger">重置</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -56,7 +69,7 @@
               <p>购物车</p>
             </a>
           </li>
-          <li>
+          <li class="current">
             <a href="user.html">
               <i class="fa fa-user"></i>
               <p>用户中心</p>
