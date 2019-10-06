@@ -1,0 +1,32 @@
+.cart-item {
+  height: 110px;
+  .cart-left {
+    float: left;
+    width: 60px;
+    height: 90px;
+  }
+  .cart-right {
+    overflow: hidden;
+    height: 90px;
+    padding: 0 10px;
+    .pro-name {
+      color: #000;
+    }
+    .price {
+      color: red;
+    }
+    .old-price {
+      text-decoration: line-through;
+    }
+    .num {
+      float: right;
+    }
+  }
+  /*
+  因为mui默认的样式时display:table-cell
+  所以里面的子元素不能做自适应
+  */
+  .mui-table-cell {
+    display: block;
+  }
+}
